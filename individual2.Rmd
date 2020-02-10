@@ -1,0 +1,28 @@
+---
+title: "individual2"
+author: "Orion Hunter/OhunterDS"
+date: "2/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+```
+```{r}
+hist(choco$Rating)
+```
+
+## The majority of the ratings is between 2.5 and 3.5 with outliers at 1 and what seems to be no ratings higher than 4.
+
+```{r}
+plot(choco$Rating,choco$Cocoa.Pct)
+```
+
+## A cocoa percentage from 65% to 70% seems to have the most high ratings density. A chocolate bar with 70% seems to be the only chocolate bar to get a 5 rating. 
+
