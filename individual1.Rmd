@@ -1,0 +1,28 @@
+---
+title: "individual1"
+author: "Ritika Agrawal"
+Github username: "ritikagrawal1710"
+date: "February 11, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+```
+
+```{r}
+hist(choco$Rating)
+```
+
+## The ratings show normal like distribution with a left skew. There are outliers as can be seen in the extreme right of the histogram and at 1. 
+
+```{r}
+order <- (choco[order(choco$Rating, decreasing = TRUE), ])
+head(order)
+```
+## As can be seen from the data, cocoa pct varies for the ratings of the choco bars. For a 70% cocoa pct, the ratings are both 4 and 5. Hence, it is evident that the ratings do not depend on cocoa pct. 
