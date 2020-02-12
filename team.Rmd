@@ -1,0 +1,46 @@
+---
+title: "team.Rmd"
+author: "Orion Hunter, Ritika Agrawal"
+date: "2/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+```
+
+```{r}
+nrow(choco)
+```
+
+## 1) There are 1852 chocolate bars rated in this data set.
+
+```{r}
+counts <- table(choco$Rating, choco$Review.Date)
+barplot(counts, main = "Ratings Distribution based on Year")
+```
+
+## 2) The most amount of ratings occured in the year 2015 with over 250 ratings entered, the amount of ratings has decreased down to 100 ratings are year similar to when the report first started
+
+```{r}
+counts <- table(choco$Rating, choco$Company.Location)
+barplot(counts, main = "Ratings Distribution based on Company Location")
+
+```
+
+## 3) The theree locations with most ratings are US, France & Canada. The ratings in US are almost 5 times  of France and Canada. 
+
+## 4) A interesting question that can be answered from the data set is, what country has the greatest amount of highly rated chocolate.
+
+```{r}
+head(choco[order(choco$Rating, decreasing = TRUE), ],3)
+```
+## 5) Italy has the highest rated chocolates followed by France.
+
+## 6) In order to get the answers to the questions, we first loaded the data with the given command. As the questions were with respect to the ranking of chocolates, we created the tables with reference to the the 'Rating' values of each chocolate company. The first questions was regarding the count of chocolate bars rated which was done with the count of rows in the 'choco' table. For the 2nd question, the bar chart was drawn up taking the review date as a variable alongwith the rating of the chocolate bar. The third question was with respect to the company location. Hence, the code was written to know the count of ratnigs by each company location and inferences were drawn from the output. Question 5 was answered based on the question put across in Q4  to show the highest number of ratings by the country.
